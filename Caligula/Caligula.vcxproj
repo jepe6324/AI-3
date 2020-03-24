@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Agent.cpp" />
+    <ClCompile Include="Source\BlackBoard.cc" />
     <ClCompile Include="Source\DeltaTime.cpp" />
     <ClCompile Include="Source\FSM.cpp" />
     <ClCompile Include="Source\InputHandler.cpp" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Agent.h" />
+    <ClInclude Include="Include\BlackBoard.h" />
     <ClInclude Include="Include\Config.h" />
     <ClInclude Include="Include\FSM.h" />
     <ClInclude Include="Include\InputHandler.h" />
