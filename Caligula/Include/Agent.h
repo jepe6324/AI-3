@@ -3,44 +3,28 @@
 #ifndef AGENT_H_INCLUDED
 #define AGENT_H_INCLUDED
 
-#include "FSM.h"
-#include "State.h"
 #include "Vector.h"
-#include "Timer.h"
-#include "Tile.h"
 
 #include <SDL_rect.h>
 
 struct Sprite;
-struct DeltaTime;
-struct SDL_Renderer;
-struct Grid;
 
-struct Agent : FSM
-{
+struct Agent
+{  // An agent will now basically have the things needed to render, it's behaviour tree and a blackboard
    Sprite* sprite_;
    SDL_Rect drawHelper_;
-   Vector2 position_;
-	
 
-   AgentState* currentState_;
+   //BehaviourTree behaviourTree_;
+   //BlackBoard blackBoard_;
 
    Agent(const char* filepath,
          int x,
          int y,
-         AgentState* startState,
          Vector2 startPos);
    ~Agent();
 
 	void Render(SDL_Renderer* renderer_);
    void Update(float dt);
-   void SwitchState(AgentState* newState);
-	
-   void Sense();
-   void Decide();
-
-   void Move(Vector2 newPos);
-   void MoveInDirection(Vector2 direction);
 };
 
 #endif //!AGENT_H_INCLUDED

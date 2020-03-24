@@ -8,11 +8,11 @@
 #include <time.h>
 #include "Random.h"
 
-TEST_STATE_1::TEST_STATE_1(SDL_Renderer& p_renderer) 
-   : m_renderer(&p_renderer)
+TEST_STATE_1::TEST_STATE_1(SDL_Renderer& p_renderer)
+	: m_renderer(&p_renderer)
 {
 	m_sound = Service<SoundHandler>::Get()->CreateSound("../Assets/plopp.wav");
-   currentState_ = GameState::EDIT;
+	boundaries = { Config::INTERNAL_WIDTH, Config::INTERNAL_HEIGHT };
 }
 
 void TEST_STATE_1::Enter()
@@ -24,30 +24,10 @@ void TEST_STATE_1::Enter()
 
 bool TEST_STATE_1::Update()
 {
-
-   switch (currentState_) {
-   case GameState::EDIT:
-      break;
-   case GameState::SIMULATE:
-      break;
-   }
-
 	return true;
 }
 
 void TEST_STATE_1::Exit()
 {
 	std::cout << "TEST_STATE_1::Exit" << std::endl;
-}
-
-void TEST_STATE_1::changeState(GameState newState)
-{
-   switch (newState)
-   {
-   case GameState::EDIT:
-      break;
-   case GameState::SIMULATE:
-      break;
-   }
-   currentState_ = newState;
 }
