@@ -1,0 +1,13 @@
+Create a game area
+Just boundaries of how far the agents can walk in every direction.
+
+Healer
+	Can heal the tank or themselves
+	Can damage monsters with magic
+
+Tank
+	Draws enmity from the monsters
+	Somehow saves the healer if they need it
+
+Monsters
+	I don't like goblins
