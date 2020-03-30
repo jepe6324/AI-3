@@ -11,5 +11,4 @@ struct Random
    static float Randf(float min, float max);
    static int Rand(int min, int max);
 };
-
 #endif // !RANDOM_H_INCLUDED

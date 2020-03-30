@@ -13,4 +13,12 @@ struct TestWalk : Node
    TestWalk(BlackBoard* bb);
    Result Run();
 };
+
+struct TestWalkDir : Node
+{
+   Timer timer_;
+
+   TestWalkDir(BlackBoard* bb);
+   Result Run();
+};
 #endif // !ACTION_NODES_H_INCLUDED

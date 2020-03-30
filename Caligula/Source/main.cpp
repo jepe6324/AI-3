@@ -64,14 +64,15 @@ int main(int ac, char** av)
 		bool running = true;
 		while (running)
 		{
-			deltaTime.Update();
-
 			// UPDATE INPUT AND HANDLE EVENTS
 			inputHandler.HandleEvents();
 			if (inputHandler.IsKeyDown(SDL_SCANCODE_ESCAPE))
 			{
 				running = false;
 			}
+
+			// UPDATE DELTATIME
+			deltaTime.Update();
 
 			// CLEARING SCREEN
 			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);

@@ -24,7 +24,13 @@ TEST_STATE_1::TEST_STATE_1(SDL_Renderer& p_renderer)
 void TEST_STATE_1::Enter()
 {
 	srand(time(NULL));
-	tank_.behaviourTree_ = new TestWalk(&tank_.blackBoard_);
+
+	Sequence* sequence = new Sequence();
+	sequence->Add(new TestWalkDir(&tank_.blackBoard_));
+	sequence->Add(new TestWalk(&tank_.blackBoard_));
+
+	tank_.behaviourTree_ = sequence;
+	tank_.behaviourTree_->bb_ = &tank_.blackBoard_;
 }
 
 bool TEST_STATE_1::Update()

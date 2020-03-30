@@ -40,6 +40,6 @@ void Agent::Update()
       behaviourTree_->Run();
    }
 
-   drawHelper_.x = blackBoard_.GetVect("position").x_ * Config::TILE_SIZE;
-   drawHelper_.y = blackBoard_.GetVect("position").y_ * Config::TILE_SIZE;
+   drawHelper_.x = blackBoard_.GetVect("position").x_;
+   drawHelper_.y = blackBoard_.GetVect("position").y_;
 }
