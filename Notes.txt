@@ -1,6 +1,11 @@
 Create a game area
 Just boundaries of how far the agents can walk in every direction.
 
+Blackboard
+	Ints
+	Vectors
+	BlackBoard*
+
 Healer
 	Can heal the tank or themselves
 	Can damage monsters with magic
@@ -11,3 +16,8 @@ Tank
 
 Monsters
 	I don't like goblins
+
+
+
+
+We want to be able to specifically 

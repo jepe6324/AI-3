@@ -90,10 +90,13 @@
     <ClCompile Include="Source\Timer.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cc">
+    <ClCompile Include="Source\BlackBoard.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\BlackBoard.cc">
+    <ClCompile Include="Source\ActionNodes.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ActionNodes.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,10 +155,10 @@
     <ClInclude Include="Include\Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Player.h">
+    <ClInclude Include="Include\BlackBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\BlackBoard.h">
+    <ClInclude Include="Include\BehaviourTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

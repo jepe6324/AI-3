@@ -8,8 +8,14 @@
 #include <time.h>
 #include "Random.h"
 
+#include "BehaviourTree.h"
+#include "ActionNodes.h"
+
 TEST_STATE_1::TEST_STATE_1(SDL_Renderer& p_renderer)
 	: m_renderer(&p_renderer)
+	, goblin_("../Assets/Goblin.png", 32, 32, {4,10})
+	, tank_("../Assets/Tank.png", 32, 32, { 10,10 })
+	, mage_("../Assets/Mage.png", 32, 32, { 11,10 })
 {
 	m_sound = Service<SoundHandler>::Get()->CreateSound("../Assets/plopp.wav");
 	boundaries = { Config::INTERNAL_WIDTH, Config::INTERNAL_HEIGHT };
@@ -18,12 +24,19 @@ TEST_STATE_1::TEST_STATE_1(SDL_Renderer& p_renderer)
 void TEST_STATE_1::Enter()
 {
 	srand(time(NULL));
-
-	//int size = grid_.tiles_.size();
+	tank_.behaviourTree_ = new TestWalk(&tank_.blackBoard_);
 }
 
 bool TEST_STATE_1::Update()
 {
+	goblin_.Update();
+	tank_.Update();
+	mage_.Update();
+
+	goblin_.Render(m_renderer);
+	tank_.Render(m_renderer);
+	mage_.Render(m_renderer);
+
 	return true;
 }
 

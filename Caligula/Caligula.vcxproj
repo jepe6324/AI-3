@@ -147,6 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Include\ActionNodes.h" />
+    <ClCompile Include="Source\ActionNodes.cc" />
     <ClCompile Include="Source\Agent.cpp" />
     <ClCompile Include="Source\BlackBoard.cc" />
     <ClCompile Include="Source\DeltaTime.cpp" />
@@ -155,7 +157,6 @@
     <ClCompile Include="Source\Keyboard.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mouse.cpp" />
-    <ClCompile Include="Source\Player.cc" />
     <ClCompile Include="Source\Random.cc" />
     <ClCompile Include="Source\Sound.cpp" />
     <ClCompile Include="Source\SoundHandler.cpp" />
@@ -167,13 +168,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Agent.h" />
+    <ClInclude Include="Include\BehaviourTree.h" />
     <ClInclude Include="Include\BlackBoard.h" />
     <ClInclude Include="Include\Config.h" />
     <ClInclude Include="Include\FSM.h" />
     <ClInclude Include="Include\InputHandler.h" />
     <ClInclude Include="Include\Keyboard.h" />
     <ClInclude Include="Include\Mouse.h" />
-    <ClInclude Include="Include\Player.h" />
     <ClInclude Include="Include\Random.h" />
     <ClInclude Include="Include\Service.h" />
     <ClInclude Include="Include\Sound.h" />

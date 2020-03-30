@@ -4,8 +4,11 @@
 #define AGENT_H_INCLUDED
 
 #include "Vector.h"
+#include "BlackBoard.h"
+#include "BehaviourTree.h"
 
 #include <SDL_rect.h>
+#include <SDL.h>
 
 struct Sprite;
 
@@ -15,16 +18,17 @@ struct Agent
    SDL_Rect drawHelper_;
 
    //BehaviourTree behaviourTree_;
-   //BlackBoard blackBoard_;
+   Node* behaviourTree_;
+   BlackBoard blackBoard_;
 
    Agent(const char* filepath,
-         int x,
-         int y,
+         int width,
+         int height,
          Vector2 startPos);
    ~Agent();
 
 	void Render(SDL_Renderer* renderer_);
-   void Update(float dt);
+   void Update();
 };
 
 #endif //!AGENT_H_INCLUDED
