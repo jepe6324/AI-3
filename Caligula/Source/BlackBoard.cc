@@ -1,4 +1,5 @@
 #include "BlackBoard.h"
+#include <string>
 
 void BlackBoard::CreateInt(std::string name, int value)
 {
@@ -30,17 +31,30 @@ Vector2 BlackBoard::GetVect(std::string name)
    return vecMap_[name];
 }
 
-void BlackBoard::CreateBB(std::string name, BlackBoard* value)
+void BlackBoard::CreateAgent(std::string name, Agent* value)
 {
-   bbMap_.insert(std::pair<std::string, BlackBoard*>(name, value));
+   agentMap_.insert(std::pair<std::string, Agent*>(name, value));
 }
 
-void BlackBoard::ChangeBB(std::string name, BlackBoard* value)
+void BlackBoard::ChangeAgent(std::string name, Agent* value)
 {
-   bbMap_[name] = value;
+   agentMap_[name] = value;
 }
 
-BlackBoard* BlackBoard::GetBB(std::string name)
+Agent* BlackBoard::GetAgent(std::string name)
 {
-   return bbMap_[name];
+   return agentMap_[name];
+}
+
+BlackBoard::~BlackBoard()
+{
+   if (agentMap_.size() == 0)
+   {
+      return;
+   }
+   for (int i = 2; i < agentMap_.size() - 1; i++)
+   {
+      std::string index = std::to_string(i);
+      agentMap_.at(index) = nullptr;
+   }
 }

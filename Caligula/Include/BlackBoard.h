@@ -6,11 +6,13 @@
 #ifndef BLACKBOARD_H_INCLUDED
 #define BLACKBOARD_H_INCLUDED
 
+struct Agent;
+
 struct BlackBoard
 {
    std::unordered_map<std::string, int> intMap_;
    std::unordered_map<std::string, Vector2> vecMap_;
-   std::unordered_map<std::string, BlackBoard*> bbMap_;
+   std::unordered_map<std::string, Agent*> agentMap_;
 
    void CreateInt(std::string name, int value);
    void ChangeInt(std::string name, int value);
@@ -20,9 +22,11 @@ struct BlackBoard
    void ChangeVect(std::string name, Vector2 value);
    Vector2 GetVect(std::string name);
 
-   void CreateBB(std::string name, BlackBoard* value);
-   void ChangeBB(std::string name, BlackBoard* value);
-   BlackBoard* GetBB(std::string name);
+   void CreateAgent(std::string name, Agent* value);
+   void ChangeAgent(std::string name, Agent* value);
+   Agent* GetAgent(std::string name);
+
+   ~BlackBoard();
 };
 
 #endif // !BLACKBOARD_H_INCLUDED

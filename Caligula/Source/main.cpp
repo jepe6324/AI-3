@@ -18,6 +18,10 @@
 #include "FSM.h"
 #include "TEST_STATE_1.h"
 
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 const float Config::SCALE_HEIGHT = float(Config::OUTPUT_HEIGHT) / float(Config::INTERNAL_HEIGHT);
 const float Config::SCALE_WIDTH = float(Config::OUTPUT_WIDTH) / float(Config::INTERNAL_WIDTH);
 
@@ -69,6 +73,8 @@ int main(int ac, char** av)
 			if (inputHandler.IsKeyDown(SDL_SCANCODE_ESCAPE))
 			{
 				running = false;
+				stateMachine.currentState_->Exit();
+				break;
 			}
 
 			// UPDATE DELTATIME
@@ -99,5 +105,8 @@ int main(int ac, char** av)
 	Mix_Quit();
 
 	SDL_Quit();
+
+	int memLeaks = _CrtDumpMemoryLeaks();
+
 	return 0;
 }

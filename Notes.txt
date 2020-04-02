@@ -18,6 +18,11 @@ Monsters
 	I don't like goblins
 
 
+-----------------------------------------------------------------------
 
+Goblin behaviour tree needs to reduce enmity against both humans by 1 every .5f seconds
+I might need to change angent id's to start at 1 due to the map defaulting to setting a value to 0
+You need to set the id number in the blackboard of the tank and mage at least
 
-We want to be able to specifically 
+If we hard limit the amount of goblins to 10 it makes the idea of getting all living goblins easier
+When something dies it need to unbind itself from the global blackboard. It also needs to delete itself since it is a newed thing. Might not apply to the humans.

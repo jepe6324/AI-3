@@ -17,16 +17,20 @@ Agent::Agent(const char* filepath,
    drawHelper_.h = height;
 
    blackBoard_.CreateVect("position", startPos);
+
 }
 
 Agent::~Agent()
 {
+   //delete sprite_;
+   delete behaviourTree_;
 }
 
 void Agent::Render(SDL_Renderer* renderer_)
 {
    SDL_RenderCopy(renderer_, sprite_->GetTexture(), &sprite_->GetArea(), &drawHelper_);
 	
+   SDL_SetRenderDrawColor(renderer_, blackBoard_.GetInt("red"), blackBoard_.GetInt("green"), blackBoard_.GetInt("blue"), 100);
 	if(Config::DEBUGRENDER == TRUE)
    {
 		SDL_RenderDrawRect(renderer_, &drawHelper_);
@@ -35,6 +39,10 @@ void Agent::Render(SDL_Renderer* renderer_)
 
 void Agent::Update()
 {
+   blackBoard_.CreateInt("red", 255);
+   blackBoard_.CreateInt("green", 255);
+   blackBoard_.CreateInt("blue", 255);
+
    if (behaviourTree_ != nullptr)
    {
       behaviourTree_->Run();

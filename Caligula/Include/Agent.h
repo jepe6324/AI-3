@@ -18,7 +18,7 @@ struct Agent
    SDL_Rect drawHelper_;
 
    //BehaviourTree behaviourTree_;
-   Node* behaviourTree_;
+   BehaviourTree* behaviourTree_;
    BlackBoard blackBoard_;
 
    Agent(const char* filepath,

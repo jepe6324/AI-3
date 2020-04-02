@@ -99,6 +99,21 @@
     <ClCompile Include="Include\ActionNodes.h">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BTNode.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BTDecorators.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BTcomposites.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BehaviourTree.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sequencers.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Config.h">
@@ -158,7 +173,22 @@
     <ClInclude Include="Include\BlackBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\BTComposites.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\BTDecorators.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\BTNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Include\BehaviourTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sequencers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Selectors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

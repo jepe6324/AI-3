@@ -3,122 +3,30 @@
 #ifndef BEHAVIOUR_TREE_H_INCLUDED
 #define BEHAVIOUR_TREE_H_INCLUDED
 
-#include "BlackBoard.h"
+#include "BTNode.h"
 
-enum Result
+struct BehaviourTree
 {
-   SUCCESS,
-   FAILURE,
-   RUNNING,
+   Node* startingNode_;
+
+   ~BehaviourTree();
+
+   void Run();
 };
 
-#pragma region BaseNodes
-
-struct Node
+struct MageBehaviourTree : BehaviourTree
 {
-   BlackBoard* bb_;
-   int priority = 0;
-   virtual Result Run() = 0;
+   MageBehaviourTree(BlackBoard* bb);
 };
 
-struct CompositeNode : Node
+struct TankBehaviourTree : BehaviourTree
 {
-   std::vector<Node*> children_;
-
-   void Add(Node* node)
-   {
-      children_.push_back(node);
-   }
+   TankBehaviourTree(BlackBoard* bb);
 };
 
-struct DecoratorNode : Node
+struct GoblinBehaviourTree : BehaviourTree
 {
-   Node* child_;
-
-   void SetChild(Node* node)
-   {
-      child_ = node;
-   }
+   GoblinBehaviourTree(BlackBoard* bb, int id);
 };
-
-#pragma endregion BaseNodes
-
-#pragma region Composite
-struct Sequence : CompositeNode
-{
-   Result Run()
-   {
-      Result ret = SUCCESS;
-      for (Node* node : children_)
-      {
-         ret = node->Run();
-         if (ret != SUCCESS)
-         {
-            break;
-         }
-      }
-      return ret;
-   }
-};
-
-struct Selector : CompositeNode
-{
-   Result Run()
-   {
-      Result ret = FAILURE;
-      for (Node* node : children_)
-      {
-         ret = node->Run();
-         if (ret != FAILURE)
-         {
-            break;
-         }
-      }
-      return ret;
-   }
-};
-
-struct Parallel : CompositeNode
-{
-   Result Run()
-   {
-      for (Node* node : children_)
-      {
-         node->Run();
-      }
-      return SUCCESS;
-   }
-};
-
-#pragma endregion Composite
-
-#pragma region Decorators
-
-struct AlwaysSucceed : DecoratorNode
-{
-   Result Run()
-   {
-      child_->Run();
-      return SUCCESS;
-   }
-};
-
-struct Inverter : DecoratorNode
-{
-   Result Run()
-   {
-      Result result = child_->Run();
-      if (result == SUCCESS)
-      {
-         return FAILURE;
-      }
-      else if (result == FAILURE)
-      {
-         return SUCCESS;
-      }
-   }
-};
-
-#pragma endregion Decorators
 
 #endif // !BEHAVIOUR_TREE_H_INCLUDED

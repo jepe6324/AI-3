@@ -15,5 +15,5 @@ struct Config
    static const float SCALE_HEIGHT;
 
    static const int TILE_SIZE = 30;
-	static const bool DEBUGRENDER = FALSE;
+	static const bool DEBUGRENDER = TRUE;
 };
