@@ -1,13 +1,14 @@
 #include "TEST_STATE_1.h"
-#include "Service.h"
-#include "InputHandler.h"
 #include <iostream>
 #include "Config.h"
 #include <time.h>
 #include "Random.h"
+#include "BehaviourTree.h"
+#include "TankBT.h"
+#include "MageBT.h"
+#include "GoblinBT.h"
 
-#include <BehaviourTree.h>
-//#include "../Source/BehaviourTree.cc"
+#include "Service.h"
 
 TEST_STATE_1::TEST_STATE_1(SDL_Renderer& p_renderer)
 	: m_renderer(&p_renderer)

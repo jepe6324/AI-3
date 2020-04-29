@@ -5,6 +5,7 @@
 #include "Service.h"
 #include "Spritehandler.h"
 #include "Config.h"
+#include "BehaviourTree.h"
 
 Agent::Agent(const char* filepath,
              int width,

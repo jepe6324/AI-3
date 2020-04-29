@@ -1,5 +1,4 @@
 #include "BTDecorators.h"
-#include "BlackBoard.h"
 
 void DecoratorNode::SetChild(Node* node)
 {

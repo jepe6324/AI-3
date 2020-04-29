@@ -1,10 +1,10 @@
 // BlackBoard.h
 
-#include <unordered_map>
-#include "Vector.h"
-
 #ifndef BLACKBOARD_H_INCLUDED
 #define BLACKBOARD_H_INCLUDED
+
+#include <unordered_map>
+#include "Vector.h"
 
 struct Agent;
 

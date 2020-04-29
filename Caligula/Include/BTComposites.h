@@ -5,7 +5,6 @@
 
 #include "BTNode.h"
 #include <vector>
-// Base Node
 
 struct CompositeNode : Node
 {
@@ -24,28 +23,4 @@ struct CompositeNode : Node
 
    void Add(Node* node);
 };
-
-// Composite Nodes
-
-struct Sequence : CompositeNode
-{
-   Sequence(BlackBoard* bb) : CompositeNode(bb) { };
-
-   Result Run();
-};
-
-struct Selector : CompositeNode
-{
-   Selector(BlackBoard* bb) : CompositeNode(bb) { };
-
-   Result Run();
-};
-
-struct Parallel : CompositeNode
-{
-   Parallel(BlackBoard* bb) : CompositeNode(bb) { };
-
-   Result Run();
-};
-
 #endif // !BT_COMPOSITES_H_INCLUDED

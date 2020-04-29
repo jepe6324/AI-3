@@ -5,12 +5,12 @@
 
 #include "Vector.h"
 #include "BlackBoard.h"
-#include "BehaviourTree.h"
 
 #include <SDL_rect.h>
 #include <SDL.h>
 
 struct Sprite;
+struct BehaviourTree;
 
 struct Agent
 {  // An agent will now basically have the things needed to render, it's behaviour tree and a blackboard

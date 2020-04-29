@@ -13,7 +13,7 @@ struct Node
       FAILURE,
       RUNNING,
    };
-   Node(BlackBoard* bb);
+   Node(BlackBoard* bb) :bb_(bb) {};
    virtual ~Node() {};
 
    BlackBoard* bb_;
